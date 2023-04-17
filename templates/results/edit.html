@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/results/{{results.id}}" method="post">
+    <div>
+      <label for="home_team_name">Name:</label>
+      <input type="text" id="home_team_name" name="home_team_name" value="{{teams.home_team_name}}" required>
+    </div>
+    
+    <div>
+      <label for="away_team_name">away_team_name:</label>
+      <input type="text" id="away_team_name" name="away_team_name" value="{{teams.away_team_name}}" required autofocus>
+    </div>
+    
+    <div>
+      <label for="home_score">home_score:</label>
+      <input type="text" id="home_score" name="home_score" value="{{teams.home_score}}" required autofocus>
+    </div>
+    
+    <div>
+      <label for="away_score">away_score:</label>
+      <input type="text" id="away_score" name="away_score" value="{{teams.away_score}}" required autofocus>
+       
+      </select>
+    </div>
+    <div>
+      <label for="game_date">game_date:</label>
+      <input type="text" id="game_date" name="game_date" value="{{teams.game_date}}" required autofocus>
+    </div>
+    
+    <button type="submit">Update Results</button>
+    
+    </form>
+    
+    {% endblock %}
+    
+    
+

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/results" method="post">
+
+  <div>
+    <label for="home_team_name">Name:</label>
+    <input type="text" id="home_team_name" name="home_team_name" placeholder="home_team_name" required autofocus>
+  </div>
+
+  <div>
+    <label for="away_team_name">away_team_name:</label>
+    <input type="text" id="away_team_name" name="away_team_name" placeholder="away_team_name" required autofocus>
+  </div>
+
+  <div>
+    <label for="home_score">home_score:</label>
+    <input type="text" id="home_score" name="home_score" placeholder="home_score" required>
+  </div>
+
+
+  <div>
+    <label for="away_score">away_score:</label>
+    <input type="text" id="away_score" name="away_score" placeholder="away_score" required>
+    
+    </select>
+  </div>
+
+  <div>
+    <label for="game_date">game_date:</label>
+    <input type="text" id="game_date" name="game_date" placeholder="game_date" required>
+    
+    </select>
+  </div>
+
+  <button type="submit">Add Result</button>
+
+</form>
+
+{% endblock %}
