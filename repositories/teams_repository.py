@@ -36,7 +36,7 @@ def select(id):
     # if len(results) > 0 
     if results:
         result = results[0]
-        teams = Teams(result['name'], result['id'] )
+        teams = Teams(result['name'], result['manager'], result['stadium'], result['id'] )
     return teams
 
 
