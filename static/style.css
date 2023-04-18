@@ -44,3 +44,10 @@ tr:hover {
 td:first-child {
   font-weight: bold;
 }
+
+menu{
+  display:flex;
+  align-items: center;
+  
+  
+}

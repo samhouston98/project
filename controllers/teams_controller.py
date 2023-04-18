@@ -1,3 +1,4 @@
+# from app import app
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.teams import Teams
@@ -25,6 +26,7 @@ def new_team():
 @teams_blueprint.route("/teams",  methods=['POST'])
 def create_team():
     name    = request.form['name']
+    print(name)
     manager = request.form['manager']
     stadium   = request.form['stadium']
     founded   = request.form['founded']
@@ -62,7 +64,7 @@ def update_teams(id):
     return redirect('/teams')
 
 # DELETE
-# DELETE '/books/<id>'
+# DELETE '/teams/<id>'
 @teams_blueprint.route("/teams/<id>/delete", methods=['POST'])
 def delete_teams(id):
     teams_repository.delete(id)

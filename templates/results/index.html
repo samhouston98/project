@@ -1,13 +1,55 @@
 {% extends "base.html" %}
 {% block content %}
+<head>
+  <title>{{title}} - Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+      <h1>Results</h1>
+      <h2>Add a result here:</h2>
+  </header>
+      <main>
+          {% for event in events %}
+          <div>
+              <p>{{event.name}}: at {{event.location}}</p>
+              {% if event.recurring %}
+              <span> Recurring: &#9989; </span>
+          {% else %}
+              <span> Not Reccuring: &#10060; </span>
+          {% endif %}
+          </div>
+          {% endfor %}
+      </main>
+      <form action="/results" method="post">
+          <label for="home_team_name">Home Team</label>
+          <input type="text" home_team_name="home_team_name" id="home_team_name">
+          <label for="away_team_name">Away Team</label>
+          <input type="text" away_team_name="away_team_name" id="_team_name">
+          <label for="home_score">Home Score</label>
+          <input type="number" name="home_score" id="home_score">
+          <label for="away_score">Away Score</label>
+          <input type="number" name="away_score" id="away_score">
+          <label for="game_date">Date of Game</label>
+          <input type="text" name="game_date" id="game_date">
+         
+      
+          <input type="submit" value="Add Result">
+      </form>
+  <footer>
+      <h2>Previous Results</h2>
+  </footer>
+  
+</body>
+</html>
 
 
-{% for results in all results %}
+{% for results in all_results %} 
 
   <div class="results">
     <div class="content">
       <a href="results/{{results.id}}">{{results.home_team_name}}</a>
-      <div class="home_team_name">
+      <div class="home_teamname">
         <span class="away_team_name">{{results.away_team_name}}</span>
         <span class="home_score">{{results.home_score}}</span>
         <span class="away_score">{{results.away_score}}</span>
@@ -20,7 +62,9 @@
         </form>
       </div>
     </div>
-  </div>
+  </div> 
 {% endfor %}
 
-{% endblock %}
+{% endblock %} 
+
+

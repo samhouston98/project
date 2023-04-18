@@ -9,7 +9,8 @@ def save(teams):
     sql = "INSERT INTO teams (name, manager, stadium, founded) VALUES (%s, %s, %s, %s) RETURNING *"
     values = [teams.name, teams.manager, teams.stadium, teams.founded]
     results = run_sql(sql, values)
-    results[0].id = id
+    id = results[0]['id']
+    teams.id = id
     return teams
 
 

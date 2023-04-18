@@ -2,6 +2,54 @@
 {% block content %}
 
 
+<head>
+  <title>{{title}} - Teams</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+      <h1>Teams</h1>
+      <h2>Add a new team here:</h2>
+  </header>
+      <main>
+           
+      </main>
+      <form action="/teams" method="post">
+          <label for="Name">Team Name</label>
+          <input type="text" name="name" id="name">
+          <label for="manager">Manager</label>
+          <input type="text" name="manager" id="manager">
+          <label for="stadium">Stadium</label>
+          <input type="text" name="stadium" id="stadium">
+          <label for="founded">Year Founded</label>
+          <input type="number" name="founded" id="founded">
+          
+         
+      
+          <input type="submit" value="Add Team">
+      </form>
+  <footer>
+      <h2>Current Teams in League</h2>
+  </footer>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% for teams in all_teams %}
   <div class="teams">
     <div class="content">
