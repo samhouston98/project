@@ -15,35 +15,20 @@
       <form action="/results" method="post">
 
 
-        <div>
-          <label for="awayTeamName">away team name:</label>
-          <input type="text" id="awayTeamName" name="away_team_name" placeholder="away team name" required/>
-        </div>
-      
-        <div>
-          <label for="team_name_home">home team name:</label>
-          <input type="text" id="team_name_home" name="home_team_name" placeholder="home_team_name" required/>
-        </div>
-      
-        <div>
-          <label for="homeScore">home_score:</label>
-          <input type="text" id="homeScore" name="home_score" placeholder="home score" required/>
-        </div>
-      
-      
-        <div>
-          <label for="awayScore">away_score:</label>
-          <input type="text" id="awayScore" name="away_score" placeholder="away score" required/>
-          
-        </div>
-      
-        <div>
-          <label for="gameDate">game_date:</label>
-          <input type="text" id="gameDate" name="game_date" placeholder="game date" required/>
-          
-        </div>
-      
-        <button type="submit">Add Result</button>
+        <label for="home_team_name">Home Team Name</label>
+        <input type="text" name="home_team_name" id="home_team_name">
+        <label for="away_team_name">Away Team Name</label>
+        <input type="text" name="away_team_name" id="away_team_name">
+        <label for="home_score">Home Score</label>
+        <input type="number" name="home_score" id="home_score">
+        <label for="away_score">Away Score</label>
+        <input type="number" name="away_score" id="away_score">
+        <label for="game_date">Date of Game</label>
+        <input type="text" name="game_date" id="game_date">
+        
+       
+    
+        <input type="submit" value="Add Result">
       
       </form>
   <footer>

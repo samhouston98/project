@@ -59,7 +59,7 @@ def create_results():
 # GET '/results/<id>'
 @results_blueprint.route("/results/<id>", methods=['GET'])
 def show_results(id):
-    teams = results_repository.select(id)
+    results = results_repository.select(id)
     return render_template('results/show.html', results = results)
 
 # EDIT

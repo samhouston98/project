@@ -38,7 +38,7 @@ def create_team():
 # SHOW
 # GET '/teams/<id>'
 @teams_blueprint.route("/teams/<id>", methods=['GET'])
-def show_results(id):
+def show_teams(id):
     teams = teams_repository.select(id)
     return render_template('teams/show.html', teams = teams)
 

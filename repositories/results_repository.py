@@ -30,7 +30,7 @@ def select_all():
 
 def select(id):
     results = None
-    sql = "SELECT * FROM books WHERE id = %s"
+    sql = "SELECT * FROM results WHERE id = %s"
     values = [id]
     results = run_sql(sql, values)
 

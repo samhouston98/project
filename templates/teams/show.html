@@ -1,13 +1,114 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <div>
+  <!-- <div>
     <p>{{teams.name}}</p>
     <hr>
     <p>{{teams.manager}}</p>
-    <p>{{teams.stadium()}}</p>
+    <p>{{teams.stadium}}</p>
     <p>{{teams.founded}}</p>
     <p><a href="/teams/{{teams.id}}/edit">Edit</a></p>
-  </div>
+  </div> -->
 
+  <h1>Results</h1>
+  <table>
+  <tr>
+      <th>Match</th>
+      <th>Result</th>
+  </tr>
+  <tr>
+      <td>Scotland vs England</td>
+      <td class="win">4-1</td>
+  </tr>
+  <tr>
+      <td>Scotland vs Wales</td>
+      <td class="win">3-2</td>
+  </tr>
+ 
+  </table>
+
+  <section id="home-image">
+    <h1>Player Stats</h1>
+<table>
+    <thread>
+        <tr>
+            <th>Player</th>
+            <th>Played</th>
+            <th>Goals</th>
+            <th>Assists</th>
+            <th>Yellow Cards</th>
+            <th>Red Cards</th>
+        </tr>
+
+</thread>
+<tbody>
+    <tr>
+        <td>Angus Gunn</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Kieran Tierney</td>
+        <td>2</td>
+        <td>1</td>
+        <td>1</td>
+        <td>2</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Aaron Hickey</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Scott Mctominay</td>
+        <td>2</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Callum Mcgregor</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Che Adams</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>John Mcginn</td>
+        <td>2</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Andy Robertson
+
+        </td>
+        <td>2</td>
+        <td>0</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+</tbody>
+</table>
+</section>
 {% endblock %}

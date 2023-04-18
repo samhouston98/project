@@ -1,16 +1,15 @@
-
-
-
 {% extends "base.html" %}
 {% block content %}
 
-  <div>
-    <p>{{results.home_team_name}}</p>
-    <p>{{results.away_team_name}}</p>
-    <p>{{results.home_score}}</p>
-    <p>{{results.away_score}}</p>
-    <p>{{results.game_date}}</p>
-    <p><a href="/results/{{results.id}}/edit">Edit</a></p>
-  </div>
+<div>
+  <p>{{results.home_team_name}}</p>
+  <p>{{results.away_team_name}}</p>
+  <p>{{results.home_score}}</p>
+  <p>{{results.away_score}}</p>
+  <p>{{results.game_date}}</p>
+  <p><a href="/results/{{results.id}}/edit">Edit</a></p>
+</div>
+
+
 
 {% endblock %}
