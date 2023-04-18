@@ -18,6 +18,8 @@ results_blueprint = Blueprint("results", __name__)
 @results_blueprint.route("/results")
 def results():
     results = results_repository.select_all() # NEW
+    for result in results:
+        print(result.id)
     return render_template("results/index.html", all_results = results)
 
 # @app.route('/results', methods=['POST'])
@@ -43,16 +45,13 @@ def new_result():
 # POST '/results'
 @results_blueprint.route("/results",  methods=['POST'])
 def create_results():
-    pdb.set_trace()
     away_team_name = request.form['away_team_name']
     home_team_name = request.form['home_team_name']
-    
     home_score = request.form['home_score']
     away_score = request.form['away_score']
     game_date = request.form['game_date']
     results = Results(home_team_name,away_team_name, home_score, away_score, game_date)
-    print(results.__dict__)
-    teams_repository.save(results)
+    results_repository.save(results)
     return redirect('/results')
 
 
@@ -86,7 +85,8 @@ def update_results(id):
 
 # DELETE
 # DELETE '/results/<id>'
-@results_blueprint.route("/results/<id>/delete", methods=['POST'])
+@results_blueprint.route("/results/delete/<id>", methods=['POST'])
 def delete_results(id):
+    print(id)
     results_repository.delete(id)
     return redirect('/results')

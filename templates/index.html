@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block home %}
 <section id="home-image">
+    <h1>League Table</h1>
 <table>
     <thread>
         <tr>
@@ -41,6 +42,26 @@
 </tbody>
 </table>
 </section>
-{% endblock %}
 
-        
+<h1>Results Table</h1>
+<table>
+<tr>
+    <th>Match</th>
+    <th>Result</th>
+</tr>
+<tr>
+    <td>Scotland vs England</td>
+    <td class="win">4-1</td>
+</tr>
+<tr>
+    <td>Scotland vs Wales</td>
+    <td class="win">3-2</td>
+</tr>
+<tr>
+    <td>England vs Wales</td>
+    <td class="lose">2-1</td>
+</tr>
+</table>
+
+</body>
+{% endblock %}

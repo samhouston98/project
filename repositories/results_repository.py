@@ -7,7 +7,7 @@ import repositories.results_repository as results_reposiory
 
 
 def save(result):
-    sql = "INSERT INTO results (home_team_name, away_team_name, home_score, away_score, game_date) VALUES (%s, %s, %s, %s, %s) RETURNING id"
+    sql = "INSERT INTO results (home_team_name, away_team_name, home_score, away_score, game_date) VALUES (%s, %s, %s, %s, %s) RETURNING *"
     values = [result.home_team_name, result.away_team_name, result.home_score, result.away_score, result.game_date]
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -22,7 +22,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        results = (row['home_team_name'], row['away_team_name'], row['home_score'], row['away_score'] , row['game_date'] )
+        results = Results(row['home_team_name'], row['away_team_name'], row['home_score'], row['away_score'] , row['game_date'], row['id'] )
         results_list.append(results)
     return results_list
 
@@ -39,24 +39,24 @@ def select(id):
     # if len(results) > 0 
     if results:
         result = results[0]
-        results = teams_repository.select(result['teams_id'])
-        results = Results(result['home_team_name'], result['away_team_name'], result['home_score'], result['away_score'] , result['game_date'])
+        # results = teams_repository.select(result['teams_id'])
+        results = Results(result['home_team_name'], result['away_team_name'], result['home_score'], result['away_score'] , result['game_date'], result['id'])
     return results
 
 
 def delete_all():
-    sql = "DELETE  FROM results"
+    sql = "DELETE FROM results"
     run_sql(sql)
 
 
 def delete(id):
-    sql = "DELETE  FROM results WHERE id = %s"
+    sql = "DELETE FROM results WHERE id = %s"
     values = [id]
+    print(values)
     run_sql(sql, values)
 
 
 def update(results):
-    sql = "home_team_name, away_team_name, home_score, away_score, game_date) = (%s, %s, %s, %s, %s) WHERE id = %s"
-    values = [results.home_team_name, results.away_team_name, results.home_score, results.away_score, results.game_date]
-    print(values)
+    sql = "UPDATE teams SET (home_team_name, away_team_name, home_score, away_score, game_date) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [results.home_team_name, results.away_team_name, results.home_score, results.away_score, results.game_date, results.id]
     run_sql(sql, values)

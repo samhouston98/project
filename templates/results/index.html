@@ -10,31 +10,41 @@
       <h2>Add a result here:</h2>
   </header>
       <main>
-          {% for event in events %}
-          <div>
-              <p>{{event.name}}: at {{event.location}}</p>
-              {% if event.recurring %}
-              <span> Recurring: &#9989; </span>
-          {% else %}
-              <span> Not Reccuring: &#10060; </span>
-          {% endif %}
-          </div>
-          {% endfor %}
+      
       </main>
       <form action="/results" method="post">
-          <label for="home_team_name">Home Team</label>
-          <input type="text" home_team_name="home_team_name" id="home_team_name">
-          <label for="away_team_name">Away Team</label>
-          <input type="text" away_team_name="away_team_name" id="_team_name">
-          <label for="home_score">Home Score</label>
-          <input type="number" name="home_score" id="home_score">
-          <label for="away_score">Away Score</label>
-          <input type="number" name="away_score" id="away_score">
-          <label for="game_date">Date of Game</label>
-          <input type="text" name="game_date" id="game_date">
-         
+
+
+        <div>
+          <label for="awayTeamName">away team name:</label>
+          <input type="text" id="awayTeamName" name="away_team_name" placeholder="away team name" required/>
+        </div>
       
-          <input type="submit" value="Add Result">
+        <div>
+          <label for="team_name_home">home team name:</label>
+          <input type="text" id="team_name_home" name="home_team_name" placeholder="home_team_name" required/>
+        </div>
+      
+        <div>
+          <label for="homeScore">home_score:</label>
+          <input type="text" id="homeScore" name="home_score" placeholder="home score" required/>
+        </div>
+      
+      
+        <div>
+          <label for="awayScore">away_score:</label>
+          <input type="text" id="awayScore" name="away_score" placeholder="away score" required/>
+          
+        </div>
+      
+        <div>
+          <label for="gameDate">game_date:</label>
+          <input type="text" id="gameDate" name="game_date" placeholder="game date" required/>
+          
+        </div>
+      
+        <button type="submit">Add Result</button>
+      
       </form>
   <footer>
       <h2>Previous Results</h2>
@@ -49,7 +59,7 @@
   <div class="results">
     <div class="content">
       <a href="results/{{results.id}}">{{results.home_team_name}}</a>
-      <div class="home_teamname">
+      <div class="home_team_name">
         <span class="away_team_name">{{results.away_team_name}}</span>
         <span class="home_score">{{results.home_score}}</span>
         <span class="away_score">{{results.away_score}}</span>
@@ -57,8 +67,9 @@
       </div>
       <div class="buttons">
 
-        <form class="delete-form" action="results/{{results.id}}/delete" method="POST">
-          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+        <form class="delete-form" action="results/delete/{{ results.id }}" method="POST">
+          <input type="submit" value="DELETE">
+          <!-- <button type="submit" class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button> -->
         </form>
       </div>
     </div>

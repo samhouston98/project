@@ -2,8 +2,6 @@ DROP TABLE IF EXISTS teams;
 DROP TABLE IF EXISTS results;
 
 
-
-
 CREATE TABLE teams (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
