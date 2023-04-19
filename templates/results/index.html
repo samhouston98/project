@@ -29,6 +29,7 @@
        
     
         <input type="submit" value="Add Result">
+       
       
       </form>
   <footer>
@@ -45,7 +46,8 @@
     <div class="content">
       <a href="results/{{results.id}}">{{results.home_team_name}}</a>
       <div class="home_team_name">
-        <span class="away_team_name">{{results.away_team_name}}</span>
+        <a href="results/{{results.id}}">{{results.away_team_name}}</a>
+        <span class="away_team_name"></span>
         <span class="home_score">{{results.home_score}}</span>
         <span class="away_score">{{results.away_score}}</span>
         <span class="game_date">{{results.game_date}}</span>
@@ -56,6 +58,7 @@
           <input type="submit" value="DELETE">
           <!-- <button type="submit" class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button> -->
         </form>
+        
       </div>
     </div>
   </div> 

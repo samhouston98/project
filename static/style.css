@@ -54,3 +54,8 @@ tr:hover {
 td:first-child {
   font-weight: bold;
 }
+
+.show_1 p{
+  display: flex;
+  align-items: center;
+}
