@@ -68,7 +68,7 @@ def show_results(id):
 def edit_results(id):
     results = results_repository.select(id)
     results = results_repository.select_all()
-    return render_template('results/edit.html', resutls = results, all_results = results)
+    return render_template('results/edit.html', results = results, all_results = results)
 
 # UPDATE
 # PUT '/results/<id>'

@@ -34,6 +34,8 @@
   
 </body>
 </html>
+<!DOCTYPE html>
+<html>
 
 
 
@@ -51,8 +53,9 @@
 
 
 {% for teams in all_teams %}
-  <div class="teams">
-    <div class="content">
+<div class="teamteam">
+   
+    
       <a href="/teams/{{teams.id}}">{{teams.name}}</a>
       <div class="name">
         {{teams.manager}}
@@ -64,10 +67,14 @@
         <form class="delete-form" action="/teams/{{teams.id}}/delete" method="POST">
           <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
         </form>
-  
+        <form class="edit-form" action="/teams/{{teams.id}}/edit" method="GET">
+          <input type="submit" value="EDIT">
+        </form>
+
       </div>
     </div>
   </div>
+</h3>
 {% endfor %}
 
 {% endblock %}
